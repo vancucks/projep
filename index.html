@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FotoTeta</title>
+   
+<style>
+    body{
+    background-color: rgb(255, 0, 0);
+
+}
+
+.painel{
+    margin: auto;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#sim{
+    
+    height: 40px;
+    width: 60px;
+    background-color: red;
+    border:2px solid white;
+    border-radius: 10px;
+    color: white;
+    margin-left: -80px;
+
+}
+
+#nao{
+    position: absolute;
+    height: 40px;
+    width: 60px;
+    background-color: red;
+    border:2px solid white;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+}
+</style>
+</head>
+<body>
+
+    <div class="painel">
+        <h1>Manda a fotinha da braba</h1>
+
+        <img src="img/esperando fototet.jpeg" alt="">
+       
+        <h1></h1>
+
+        <button id="sim" onclick="mimde()">Sim!</button>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+    </div>
+
+    <script>
+        function fuja() {
+            var botaonao = document.getElementById("nao")
+
+            var largurajanela = window.innerWidth;
+            var alturajanela = window.innerHeight;
+
+            var maxX = largurajanela - botaonao.offsetWidth;
+            var maxY = alturajanela - botaonao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaonao.style.left = aleatorioX + "px";
+            botaonao.style.top = aleatorioY + "px";
+        }
+
+        function mimde() {
+            alert ("mim dê! (eu sei que não adianta mas aceito bolo)")
+        }
+    </script>
+</body>
+</html>
